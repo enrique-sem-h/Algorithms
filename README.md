@@ -28,19 +28,4 @@ Topics covered include:
 ---
 
 ## Structure
-I'll be improving its structure over time along with new algorithms but it will propably look like this:
-
-Data Structures
-    linked_list.py
-    stack.py
-    queue.py
-Sorting
-    bubble_sort.py
-    quick_sort.py
-    merge_sort.py
-Searching
-    binary_search.py
-    linear_search.py
-Leetcodes
-    two_sum.py
-    valid_parentheses.py
+I'll keep improving the structure as I add new algorithms.
