@@ -1,4 +1,5 @@
 from typing import Optional
+from collections import deque
 
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
@@ -20,9 +21,32 @@ class Solution:
         
         return isMirror(root.left, root.right)
     
+    def isSymmetricIteractive(self, root: Optional[TreeNode]) -> bool:
+        if not root:
+            return True
+        
+        queue = deque([(root.left, root.right)])
+        
+        while queue:
+            left, right = queue.popleft()
+            
+            if not left and not right:
+                continue
+
+            if not left or not right:
+                return False
+            
+            if left.val != right.val:
+                return False
+            
+            queue.append((left.left, right.right))
+            queue.append((right.left, left.right))
+
+        return True
+    
 root = TreeNode(1,
         TreeNode(2, TreeNode(3), TreeNode(4)),
         TreeNode(2, TreeNode(4), TreeNode(3))
 )
 
-print(Solution().isSymmetric(root))
+print(Solution().isSymmetricIteractive(root))
